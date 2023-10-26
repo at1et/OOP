@@ -16,13 +16,13 @@ int main()
     int test2[] = { 1, 5, 4 };
     int test3[] = { 1, 5, 4, 3, 2, 6, 2 };
 
-    cout << "Введите количество чисел: " << endl;
-    cin >> n;
-
     // Проверка
     assert(calculateAbsSum(vector<int>(test, test + 5)) == 15);
     assert(calculateAbsSum(vector<int>(test2, test2 + 3)) == 10);
     assert(calculateAbsSum(vector<int>(test3, test3 + 7)) == 23);
+
+    cout << "Введите количество чисел: " << endl;
+    cin >> n;
 
     vector<int> num(n); // Создание вектора
 
