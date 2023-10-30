@@ -33,7 +33,7 @@ int main()
     case 0:
         for (int i = 0; i < n; i++)
         {
-            num[i] = randomNum(); // генерация от 1 до INT_MAX
+            num[i] = rand(); // генерация от 1 до INT_MAX
             cout << "a" << i + 1 << " " << num[i] << endl; // выводим число
         }
 
