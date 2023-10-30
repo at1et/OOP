@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cassert>
-#include "calcNum.h"
 #include <vector>
+#include <random>
+#include "calcNum.h"
 
 using namespace std;
 
@@ -21,30 +22,32 @@ int main()
     assert(calculateAbsSum(vector<int>(test2, test2 + 3)) == 10);
     assert(calculateAbsSum(vector<int>(test3, test3 + 7)) == 23);
 
-    cout << "Введите количество чисел: " << endl;
-    cin >> n;
-
     vector<int> num(n); // Создание вектора
+
 
     cout << "Если вы хотите ввести значения из файла - нажмите 1" << endl << "Если вы хотите заполнить их случайно - нажмите 0" << endl;
     cin >> x;
     switch (x)
     {
-    case 0:
+    case 0: //Для ввода кол-ва чисел вручную и заполние их рандомными значениями
+    {
+        cout << "Введите количество чисел: " << endl;
+    	cin >> n;	
+    	num.resize(n);
         for (int i = 0; i < n; i++)
         {
-            num[i] = rand(); // генерация от 1 до INT_MAX
+           	num[i] = rand(); // генерация от 1 до INT_MAX
             cout << "a" << i + 1 << " " << num[i] << endl; // выводим число
         }
-
+		
         absSum = calculateAbsSum(num);
 
         cout << "" << endl;
         cout << "Сумма всех элементов массива под модулем: " << absSum << endl;
         cout << "" << endl;
         break;
-
-    case 1:
+     }
+    case 1: //Для ввода чисел из файла
     {
         const char* filename = "numbers.txt";
         vector<int> arr;
