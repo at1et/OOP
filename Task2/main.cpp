@@ -45,6 +45,7 @@ int main()
         cout << "" << endl;
         cout << "Сумма всех элементов массива под модулем: " << absSum << endl;
         cout << "" << endl;
+        saveResultsToFile(num, absSum);
         break;
      }
     case 1: //Для ввода чисел из файла
@@ -66,6 +67,7 @@ int main()
             cout << "" << endl;
             cout << "Сумма всех элементов вектора под модулем: " << absSum << endl;
             cout << "" << endl;
+            saveResultsToFile(num, absSum);
         }
         else
         {

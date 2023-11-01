@@ -47,5 +47,25 @@ bool numFromFile(const char* filename, vector<int>& arr)
     return true;
 }
 
+// Функция для записи результатов в файл
+void saveResultsToFile(const vector<int>& data, int sum) {
+    const char* filename = "results.txt"; // Имя файла, в который будем записывать результаты
+
+    ofstream outFile(filename); // Открываем файл для записи
+    if (outFile.is_open()) {
+        // Записываем результаты в файл
+        outFile << "Сумма всех элементов: " << sum << endl;
+        outFile << "Элементы массива:" << endl;
+        for (int i = 0; i < data.size(); i++) {
+            outFile << "a" << i + 1 << " " << data[i] << endl;
+        }
+        outFile.close(); // Закрываем файл
+        cout << "Результаты сохранены в файл: " << filename << endl;
+    }
+    else {
+        cout << "Ошибка при открытии файла для записи." << endl;
+    }
+}
+
 
 
