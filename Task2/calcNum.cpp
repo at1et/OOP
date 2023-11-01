@@ -1,4 +1,4 @@
-#include <vector> // Добавьте эту строку для работы с векторами
+#include <vector> // строка для работы с векторами
 #include <iostream>
 #include <random>
 #include <fstream>
