@@ -9,4 +9,4 @@ int calculateAbsSum(const vector<int>& arr);
 bool numFromFile(const char* filename, vector<int>& arr);
 
 // Функция для записи результатов в файл
-void saveResultsToFile(const vector<int>& data, int sum)
+void saveResultsToFile(const vector<int>& data, int sum);
