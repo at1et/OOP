@@ -1,3 +1,4 @@
+//AUTOR: ANDREY POLUEKTOV VMK-22
 #include <iostream>
 #include <cassert>
 #include <vector>
