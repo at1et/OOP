@@ -19,7 +19,7 @@ int randomNum()
 int calculateAbsSum(const vector<int>& arr)
 {
     int sum = 0;
-    for (int i = 0; i < arr.size(); i++) {
+    for (int i = 0; i < arr.size(); i++) { //arr
         sum += arr[i];
     }
     return abs(sum);
@@ -56,11 +56,11 @@ void saveResultsToFile(const vector<int>& data, int sum) {
         // Записываем результаты в файл
         outFile << "Сумма всех элементов: " << sum << endl;
         outFile << "Элементы массива:" << endl;
-        for (int i = 0; i < data.size(); i++) {
+        for (int i = 0; i < data.size(); i++) {     //.size возвращает кол-во символов в строке 
             outFile << "a" << i + 1 << " " << data[i] << endl;
         }
         outFile.close(); // Закрываем файл
-        cout << "Результаты сохранены в файл: " << filename << endl;
+        cout << "Results in : " << filename << endl;
     }
     else {
         cout << "Ошибка при открытии файла для записи." << endl;
