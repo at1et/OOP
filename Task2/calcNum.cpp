@@ -5,66 +5,65 @@
 
 using namespace std;
 
-// Процедура для генерации случайных натуральных чисел в диапазоне от 1 до INT_MAX
+// Процедура для генерации случайных чисел в диапазоне от -1000 до 1000
 int randomNum()
 {
-    random_device rd; // Создаём объект для генерации случайных чисел на основе аппаратных источников
-    mt19937 gen(rd()); // Инициализируем генератор случайных чисел
-    uniform_int_distribution<int> dis(1, INT_MAX); // Задаём диапазон от 1 до максимального INT
-    return dis(gen); // Генерируем и возвращаем случайное число из указанного диапазона
+    return rand() % 2000 - 1000; // Генерация случайного числа в диапазоне от -1000 до 1000
 }
 
-// Процедура для сложения элементов массива и выведения их под модуль
-// Процедура для вычисления модуля суммы элементов вектора
-int calculateAbsSum(const vector<int>& arr)
+
+// Процедура для сложения элементов вектора и вычисления модуля суммы
+int calculateAbsSum(const vector<double>& arr)
 {
-    int sum = 0;
-    for (int i = 0; i < arr.size(); i++) { //arr
-        sum += arr[i];
+    double sum = 0; // Инициализируем переменную для хранения суммы элементов вектора
+    for (int i = 0; i < arr.size(); i++) {
+        sum += arr[i]; // Прибавляем текущий элемент к сумме
     }
-    return abs(sum);
+    return abs(sum); // Возвращаем модуль суммы всех элементов вектора
 }
 
 
 // Процедура для заполнения вектора из файла
-bool numFromFile(const char* filename, vector<int>& arr)
+bool numFromFile(const char* filename, vector<double>& arr)
 {
-    ifstream inputFile(filename); // Открываем файл для чтения
-    int num;
+    ifstream inputFile(filename); // Создаем объект ifstream для чтения из файла с заданным именем
+    double num;
 
-    if (!inputFile)
+    if (!inputFile) // Проверяем, успешно ли открыт файл для чтения
     {
-        cerr << "Ошибка открытия файла." << endl;
-        return false;
+        cerr << "Ошибка открытия файла." << endl; // Выводим сообщение об ошибке, если файл не удалось открыть
+        return false; // Возвращаем false, чтобы указать на неудачное выполнение процедуры
     }
 
+    // Считывание чисел из файла и добавление их в вектор
     while (inputFile >> num)
     {
-        arr.push_back(num); // Добавляем числа в вектор
+        arr.push_back(num); // Добавляем считанное число в конец вектора
     }
-    inputFile.close(); // Закрытие файла
+    inputFile.close(); // Закрываем файл после считывания
 
-    return true;
+    return true; // Возвращаем true, чтобы указать на успешное выполнение процедуры
 }
 
-// Функция для записи результатов в файл
-void saveResultsToFile(const vector<int>& data, int sum) {
-    const char* filename = "results.txt"; // Имя файла, в который будем записывать результаты
 
-    ofstream outFile(filename); // Открываем файл для записи
-    if (outFile.is_open()) {
-        // Записываем результаты в файл
-        outFile << "Сумма всех элементов: " << sum << endl;
+// Процедура для записи результатов в файл
+void saveResultsToFile(const vector<double>& data, int sum, const string& filename) {
+    ofstream outFile(filename); // Создаем объект ofstream для записи в файл с заданным именем
+    if (outFile.is_open()) { // Проверяем, успешно ли открыт файл для записи
+        // Запись результатов в файл
+        outFile << "Сумма всех элементов: " << sum << endl; // Записываем сумму в файл
         outFile << "Элементы массива:" << endl;
-        for (int i = 0; i < data.size(); i++) {     //.size возвращает кол-во символов в строке 
-            outFile << "a" << i + 1 << " " << data[i] << endl;
+        for (int i = 0; i < data.size(); i++) {
+            outFile << "a" << i + 1 << " " << data[i] << endl; // Записываем элементы массива в файл
         }
-        outFile.close(); // Закрываем файл
-        cout << "Results in : " << filename << endl;
+        outFile.close(); // Закрываем файл после записи
+        cout << "Results in : " << filename << endl; // Выводим сообщение о завершении записи в файл
     }
     else {
-        cout << "Ошибка при открытии файла для записи." << endl;
+        cout << "Ошибка при открытии файла для записи." << endl; // Выводим сообщение об ошибке при открытии файла
     }
+}
+
 }
 
 
