@@ -1,13 +1,15 @@
 //Poluektov Andrey, VMK-22
-#include <vector> // Добавьте эту строку для работы с векторами
-using namespace std; // Добавьте эту строку для использования пространства имен std
+#include <vector>
+#include <iostream>
+#include <fstream>
 
-// Процедура для сложения элементов массива и выведения их под модуль
-int calculateAbsSum(const vector<int>& arr);
-/**/
+using namespace std;
 
-// Процедура для заполнения массива из файла и получения его длины
-bool numFromFile(const char* filename, vector<int>& arr);
+int randomNum();
 
-// Функция для записи результатов в файл
-void saveResultsToFile(const vector<int>& data, int sum);
+int calculateAbsSum(const vector<double>& arr);
+
+bool numFromFile(const char* filename, vector<double>& arr);
+
+void saveResultsToFile(const vector<double>& data, int sum, const string& filename);
+#pragma once
