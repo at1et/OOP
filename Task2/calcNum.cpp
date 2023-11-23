@@ -52,11 +52,6 @@ void saveResultsToFile(const vector<double>& data, int sum, const string& filena
     if (outFile.is_open()) { // Проверяем, успешно ли открыт файл для записи
         // Запись результатов в файл
         outFile << "Сумма всех элементов: " << sum << endl; // Записываем сумму в файл
-        outFile << "Элементы массива:" << endl;
-        for (int i = 0; i < data.size(); i++) {
-            outFile << "a" << i + 1 << " " << data[i] << endl; // Записываем элементы массива в файл
-        }
-        outFile.close(); // Закрываем файл после записи
         cout << "Results in : " << filename << endl; // Выводим сообщение о завершении записи в файл
     }
     else {
@@ -64,7 +59,6 @@ void saveResultsToFile(const vector<double>& data, int sum, const string& filena
     }
 }
 
-}
 
 
 
