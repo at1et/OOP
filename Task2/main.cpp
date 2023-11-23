@@ -12,10 +12,13 @@ int main()
     vector<double> num; // Используем вещественные числа вместо целых
 
     // Переменные для тестировки
-    double test[] = { 1.5, 2.5, 3.5, 4.5, 5.5 };
-    double test2[] = { 1.5, 2.5, 3.5 };
-    double test3[] = { 1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5 };
+    vector <double> test = { 1.5, 2.5, 3.5, 4.5, 5.5 }; // 17.5
+    vector <double> test2 = { -1.5, 2.5, 3.5 };
+    vector <double> test3 = { 1.5, 2.0, 3.5, -4.5, 5.0, -6.5, 7.5 };
 
+    assert(calculateAbsSum(test) == 17.5);
+    assert(calculateAbsSum(test2) == 7.5);
+    assert(calculateAbsSum(test3) == 30.5);
 
 
     cout << "Если вы хотите ввести значения из файла - нажмите 1" << endl
@@ -23,14 +26,14 @@ int main()
     cin >> x;
     switch (x)
     {
-    case 0:
+    case 0: 
     {
         cout << "Введите количество чисел: " << endl;
         cin >> n;
         num.resize(n);
         for (int i = 0; i < n; i++)
         {
-            num[i] = rand() % 200 - 100; // Генерация от -100 до 100
+            num[i] = randomNum();
             cout << "a" << i + 1 << " " << num[i] << endl;
         }
 
@@ -49,8 +52,7 @@ int main()
     case 1:
     {
         string fileName;
-        cout << "Введите имя файла с числами: ";
-        cin >> fileName;
+        fileName = "numbers.txt";
 
         vector<double> arr;
         if (numFromFile(fileName.c_str(), arr))
@@ -67,7 +69,10 @@ int main()
             cout << "Сумма всех элементов вектора под модулем: " << absSum << endl;
             cout << "" << endl;
 
-            saveResultsToFile(num, absSum, fileName);
+            string fileName2;
+            cout << "Введите имя файла для сохранения результатов: ";
+            cin >> fileName2;
+            saveResultsToFile(num, absSum, fileName2);
         }
         else
         {
