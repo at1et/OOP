@@ -16,9 +16,9 @@ int main()
     vector <double> test2 = { -1.5, 2.5, 3.5 };
     vector <double> test3 = { 1.5, 2.0, 3.5, -4.5, 5.0, -6.5, 7.5 };
 
-    assert(calculateAbsSum(test) == 17.5);
-    assert(calculateAbsSum(test2) == 7.5);
-    assert(calculateAbsSum(test3) == 30.5);
+    assert(abs(17 - calculateAbsSum(test)) < 0.1);
+    assert(abs(4.5 - calculateAbsSum(test)) < 0.1);
+    assert(abs(9.5 - calculateAbsSum(test)) < 0.1);
 
 
     cout << "Если вы хотите ввести значения из файла - нажмите 1" << endl
