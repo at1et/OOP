@@ -1,4 +1,5 @@
 # АТД
+
 Описание:
 
 MusicTrack представляет собой абстракцию музыкального трека, содержащую информацию о его названии, исполнителе, длительности, альбоме, жанре и годе выпуска.
@@ -6,14 +7,23 @@ MusicTrack представляет собой абстракцию музыка
 
 Конструктор:
 MusicTrack(title: string, artist: string, length: double, album: string, genre: string, year: int): MusicTrack - создает экземпляр MusicTrack с заданными параметрами.
+
 Методы:
+
 printTrackInfo(): void - выводит информацию о треке в консоль.
+
 getTitle(): string - возвращает название трека.
+
 setTitle(title: string): void - устанавливает название трека.
+
 getArtist(): string - возвращает имя исполнителя.
-setArtist(artist: string): void - устанавливает имя исполнителя.
+
+etArtist(artist: string): void - устанавливает имя исполнителя.
+
 getLength(): double - возвращает длительность трека.
+
 setLength(length: double): void - устанавливает длительность трека.
+
 getAlbum(): string - возвращает название альбома.
 setAlbum(album: string): void - устанавливает название альбома.
 getGenre(): string - возвращает жанр трека.
