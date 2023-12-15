@@ -1,14 +1,14 @@
 # АТД
 
-Описание:
+# Описание:
 
 MusicTrack представляет собой абстракцию музыкального трека, содержащую информацию о его названии, исполнителе, длительности, альбоме, жанре и годе выпуска.
 Операции:
 
-Конструктор:
+# Конструктор:
 MusicTrack(title: string, artist: string, length: double, album: string, genre: string, year: int): MusicTrack - создает экземпляр MusicTrack с заданными параметрами.
 
-Методы:
+# Методы:
 
 printTrackInfo(): void - выводит информацию о треке в консоль.
 
@@ -25,11 +25,17 @@ getLength(): double - возвращает длительность трека.
 setLength(length: double): void - устанавливает длительность трека.
 
 getAlbum(): string - возвращает название альбома.
+
 setAlbum(album: string): void - устанавливает название альбома.
+
 getGenre(): string - возвращает жанр трека.
+
 setGenre(genre: string): void - устанавливает жанр трека.
+
 getYear(): int - возвращает год выпуска трека.
+
 setYear(year: int): void - устанавливает год выпуска трека.
+
 getLengthInSeconds(): double - возвращает длительность трека в секундах.
 
 # UML
