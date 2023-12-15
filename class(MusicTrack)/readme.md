@@ -36,8 +36,6 @@ getYear(): int - возвращает год выпуска трека.
 
 setYear(year: int): void - устанавливает год выпуска трека.
 
-getLengthInSeconds(): double - возвращает длительность трека в секундах.
-
 # UML
 
 ![UML](https://raw.githubusercontent.com/at1et/OOP/main/drawio/UML%20MusicTrack.drawio.svg)
