@@ -1,43 +1,31 @@
-#include <iostream>  // Подключение библиотеки для ввода/вывода через консоль
-#include <string>    // Подключение библиотеки для работы со строками
+#include <iostream>
+#include "MusicTrack.h"
 
-using namespace std;
-
-// Объявление класса MusicTrack
-class MusicTrack {
-public:
-    // Конструктор класса с параметрами
-    MusicTrack(string title, string artist, double length, string album, string genre)
-        : title_(title), artist_(artist), length_(length), album_(album), genre_(genre) {}
-
-    // Метод для вывода информации о треке
-    void printTrackInfo() const {
-        cout << "Title: " << title_ << endl;    // Вывод названия трека
-        cout << "Artist: " << artist_ << endl;  // Вывод исполнителя
-        cout << "Length: " << length_ << " minutes" << endl;  // Вывод длительности трека
-        cout << "Album: " << album_ << endl;    // Вывод названия альбома
-        cout << "Genre: " << genre_ << endl;    // Вывод жанра трека
-        cout << "year" << endl;
-        cout << endl;
-    }
-
-private:
-    // Приватные поля класса
-    string title_;    // Название трека
-    string artist_;   // Имя исполнителя
-    double length_;    // Длительность трека
-    string album_;    // Название альбома
-    string genre_;    // Жанр трека
-};
-
-// Главная функция программы
 int main() {
     // Создание экземпляра класса MusicTrack с заданными параметрами
-    MusicTrack myTrack("Song Title", "Artist Name", 3.5, "Album Name", "Pop");
-    MusicTrack myAnotherTrack("Goodbye m", "tututut", 10, "meds", "Alternative");
+    MusicTrack myTrack("Song Title", "Artist Name", 3.5, "Album Name", "Pop", 2023);
 
-    // Вызов метода для вывода информации о треке
+    // Используем геттеры для получения информации о треке и выводим ее
+    cout << "Title: " << myTrack.getTitle() << endl; // Получаем и выводим название трека
+    cout << "Artist: " << myTrack.getArtist() << endl; // Получаем и выводим имя исполнителя
+    cout << "Length: " << myTrack.getLength() << " minutes" << endl; // Получаем и выводим длительность трека
+    cout << "Album: " << myTrack.getAlbum() << endl; // Получаем и выводим название альбома
+    cout << "Genre: " << myTrack.getGenre() << endl; // Получаем и выводим жанр трека
+    cout << "Year: " << myTrack.getYear() << endl; // Получаем и выводим год выпуска трека
+    
+    cout << "\n";
+
+
+    // Используем сеттеры для изменения информации о треке
+    myTrack.setTitle("Accordion"); // Устанавливаем новое название трека
+    myTrack.setArtist("MF DOOM"); // Устанавливаем нового исполнителя
+    myTrack.setLength(1.58); // Устанавливаем новую длительность трека
+    myTrack.setAlbum("Madvillain"); // Устанавливаем новое название альбома
+    myTrack.setGenre("Hip-hop"); // Устанавливаем новый жанр трека
+    myTrack.setYear(2004); // Устанавливаем новый год выпуска трека
+
+    // Выводим обновленную информацию о треке
     myTrack.printTrackInfo();
-    myAnotherTrack.printTrackInfo();
 
+    return 0;
 }
