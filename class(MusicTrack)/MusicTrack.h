@@ -1,8 +1,13 @@
 #pragma once  // Директива предотвращает многократное включение заголовочного файла
 #include <iostream>
 #include <string>
+#include <cassert>
 
 using namespace std;  // Используем пространство имен std
+
+/* MusicTrack представляет собой абстракцию музыкального трека,
+содержащую информацию о его названии, исполнителе, длительности, альбоме, жанре и годе выпуска*/
+
 
 class MusicTrack {
 public:
@@ -42,3 +47,7 @@ private:
     string genre_;    // Жанр трека
     int year_;        // Год
 };
+void test() {
+    MusicTrack myTrack("Song Title", "Artist Name", 3.5, "Album Name", "Pop", 2023);
+    assert(title_ == "Song Title");
+}
