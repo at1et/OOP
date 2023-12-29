@@ -37,4 +37,4 @@ setYear(year: int): void - устанавливает год выпуска тр
 
 # UML
 
-![UML](drawio/UML MusicTrack.drawio.svg)
+!(https://github.com/at1et/OOP/blob/main/drawio/UML%20MusicTrack.drawio.svg)
