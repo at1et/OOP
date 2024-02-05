@@ -17,7 +17,7 @@ setTitle(title: string): void - устанавливает название тр
 
 getArtist(): string - возвращает имя исполнителя.
 
-etArtist(artist: string): void - устанавливает имя исполнителя.
+getArtist(artist: string): void - устанавливает имя исполнителя.
 
 getLength(): double - возвращает длительность трека.
 
