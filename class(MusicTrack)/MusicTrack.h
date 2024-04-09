@@ -4,6 +4,7 @@
 #include <sstream>
 #include <cassert>
 #include <fstream>
+#include <vector>
 
 using namespace std;  // Используем пространство имен std
 
@@ -58,3 +59,12 @@ private:
     string genre_;    // Жанр трека
     int year_;        // Год
 };
+
+// Функция для сохранения данных о треке в файл
+void saveToFile(const MusicTrack& track, const std::string& filename);
+
+// Функция для чтения данных о треках из файла и создания объектов MusicTrack
+std::vector<MusicTrack> readFromFile(const std::string& filename);
+
+// Функция, объединяющая данные объекта MusicTrack в одну строку
+string concatenateTrackData(const MusicTrack& track);
