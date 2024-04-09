@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "MusicTrack.h"
 
 using namespace std;  // Используем пространство имен std
@@ -67,3 +67,25 @@ void MusicTrack::setYear(int year) {
     year_ = year;
 }
 
+void createClassesFromIntoFile(const string& filename) {
+    ifstream inputFile(filename);
+    if (inputFile.is_open()) {
+        string line;
+        // Цикл для построчной обработки файла
+        while (getline(inputFile, line)) {
+            // Если цикл находит строку "Track", то создаётся новый объект
+            if (line.find("Track:") != string::npos) {
+                MusicTrack newClass("", "", 0, "", "", 0);
+
+                while (getline(inputFile, line) && !line.empty()) {
+                    if (line.find("Title:") != string::npos) {
+                        break;
+                    }
+                    else if (line.find("Artist:") != string::npos) {
+                        newClass.set
+                    }
+                }
+            }
+        }
+    }
+}
