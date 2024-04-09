@@ -4,4 +4,4 @@ MusicInstrument представляет собой абстракцию муз�
 
 # UML
 
-![UML](https://github.com/at1et/OOP/blob/main/drawio/UML(MusicalInstruments).drawio.svg)
+![UML](https://github.com/at1et/OOP/blob/main/drawio/UML%20FOR%20MI.svg)
