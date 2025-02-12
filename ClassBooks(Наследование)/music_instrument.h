@@ -4,6 +4,12 @@
 
 #include <string>
 
+/**
+ * @class MusicalInstrument
+ * @brief Абстрактный базовый класс для всех музыкальных инструментов.
+ *
+ * Содержит общие свойства: название и тип инструмента.
+ */
 class MusicalInstrument {
 protected:
     std::string name;
@@ -11,9 +17,15 @@ protected:
 
 public:
     MusicalInstrument(std::string _name, std::string _type);
-    virtual void playSound();
+    virtual void playSound() = 0; // Чисто виртуальный метод
 };
 
+/**
+ * @class Guitar
+ * @brief Класс, представляющий гитару.
+ *
+ * Наследует MusicalInstrument. Добавляет параметры: количество струн и материал корпуса.
+ */
 class Guitar : public MusicalInstrument {
 private:
     int strings;
@@ -24,6 +36,12 @@ public:
     void playSound() override;
 };
 
+/**
+ * @class Trompete
+ * @brief Класс, представляющий трубу.
+ *
+ * Наследует MusicalInstrument. Добавляет параметры: материал и количество клапанов.
+ */
 class Trumpet : public MusicalInstrument {
 private:
     std::string material;
@@ -34,6 +52,12 @@ public:
     void playSound() override;
 };
 
+/**
+ * @class Drums
+ * @brief Класс, представляющий барабаны.
+ *
+ * Наследует MusicalInstrument. Добавляет параметры: количество барабанов и их тип.
+ */
 class Drums : public MusicalInstrument {
 private:
     int drumCount;
