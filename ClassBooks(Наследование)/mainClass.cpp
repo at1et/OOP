@@ -1,18 +1,24 @@
 #include <iostream>
+#include <vector>
 #include "music_instrument.h"
 
 int main() {
-    // Создание объектов базового и производных классов
-    MusicalInstrument instrument("Piano", "piano");
-    Guitar guitar("Acoustic", 6, "wood");
-    Trumpet trumpet("Brass Trumpet", "brass", 3);
-    Drums drums("Electronic Drums", 8, "electronic");
+    // Создание объектов через указатели на базовый класс
+    std::vector<MusicalInstrument*> instruments;
 
-    // Вызов метода playSound для каждого объекта
-    instrument.playSound(); // Вывод: Playing piano Piano...
-    guitar.playSound();     // Вывод: Strumming 6-string wood Acoustic...
-    trumpet.playSound();    // Вывод: Blowing brass Brass Trumpet with 3 valves...
-    drums.playSound();      // Вывод: Beating 8 electronic Electronic Drums...
+    instruments.push_back(new Guitar("Acoustic", 6, "wood"));
+    instruments.push_back(new Trumpet("Brass Trumpet", "brass", 3));
+    instruments.push_back(new Drums("Electronic Drums", 8, "electronic"));
+
+    // Полиморфный вызов методов
+    for (auto* instrument : instruments) {
+        instrument->playSound(); // Вызовется реализация соответствующего класса
+    }
+
+    // Освобождение памяти
+    for (auto* instrument : instruments) {
+        delete instrument;
+    }
 
     return 0;
 }
